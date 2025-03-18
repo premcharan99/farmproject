@@ -1,0 +1,177 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 120 61% 19%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 61% 19%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 61% 19%;
+
+    --primary: 120 61% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 68% 75%;
+    --secondary-foreground: 120 61% 19%;
+
+    --muted: 120 9% 96%;
+    --muted-foreground: 120 9% 45%;
+
+    --accent: 60 100% 50%;
+    --accent-foreground: 120 61% 19%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 5% 90%;
+    --input: 120 5% 90%;
+    --ring: 120 61% 34%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased relative;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-forest-700 font-medium;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+
+  p {
+    @apply text-base md:text-lg text-gray-800 leading-relaxed;
+  }
+
+  .section-padding {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  .container-custom {
+    @apply px-4 md:px-8 max-w-7xl mx-auto;
+  }
+
+  .button-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-forest-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-forest-400;
+  }
+
+  /* Page transition animation */
+  .page-enter {
+    @apply opacity-0;
+  }
+
+  .page-enter-active {
+    @apply opacity-100 transition-opacity duration-300;
+  }
+
+  .page-exit {
+    @apply opacity-100;
+  }
+
+  .page-exit-active {
+    @apply opacity-0 transition-opacity duration-300;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest-500 hover:bg-forest-600 text-white font-medium py-3 px-6 rounded-md shadow-sm transition-all duration-300 inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-forest-300 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-leaf-500 hover:bg-leaf-600 text-forest-800 font-medium py-3 px-6 rounded-md shadow-sm transition-all duration-300 inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-leaf-300 focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-forest-500 text-forest-500 hover:bg-forest-50 font-medium py-3 px-6 rounded-md transition-all duration-300 inline-flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-forest-300 focus:ring-offset-2;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .tag-organic {
+    @apply bg-leaf-100 text-forest-700;
+  }
+
+  .tag-seasonal {
+    @apply bg-harvest-100 text-earth-700;
+  }
+
+  .tag-local {
+    @apply bg-forest-100 text-forest-700;
+  }
+
+  .product-card {
+    @apply relative overflow-hidden bg-white rounded-lg shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+
+  .product-card-image {
+    @apply aspect-square w-full object-cover object-center;
+  }
+
+  .product-card-content {
+    @apply p-4;
+  }
+
+  .fade-mask-bottom {
+    @apply absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent;
+  }
+
+  .fade-mask-right {
+    @apply absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-white to-transparent;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-forest-900/70 backdrop-blur-md border border-forest-800/20;
+  }
+}
